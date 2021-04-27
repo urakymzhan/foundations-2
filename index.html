@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Foundations 2</title>
+    <link href="prism.css" rel="stylesheet" />
+    <style>
+      main {
+        padding: 5px;
+      }
+      h2 {
+        border-bottom: 2px solid #333;
+        color: #333;
+      }
+      .source {
+        border: 2px solid #333;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+        <!-- call, bind, apply -->
+      <h2>call, bind, apply</h2>
+      <section>
+        <div>
+          <p>1.</p>
+          <p>
+              <pre>
+                  <code class="language-js">
+                    var func = function() {
+                        console.log(this)
+                    }.bind(1);
+
+                    func(); // ?
+                  </code>
+              </pre>
+          </p>
+        </div>
+        <div>
+        </section>
+      <section>
+        <div>
+          <p>2.</p>
+          <p>
+              <pre>
+                  <code class="language-js">
+                    var func = function() {
+                        console.log(this)
+                    }.bind(1);
+
+                     var obj = {
+                        callFun : func
+                     }
+                    obj.callFun.func(); // ?
+                  </code>
+              </pre>
+          </p>
+        </div>
+        <div>
+        </section>
+      <section>
+        <div>
+          <p>3.</p>
+          <p>
+              <pre>
+                  <code class="language-js">
+                    function checkFun(a, b, c){
+                        console.log(this);
+                        console.log(a);
+                        console.log(b);
+                        console.log(c);
+                    }
+                    checkFun.call(1,2,3,4); // ?
+                  </code>
+              </pre>
+          </p>
+        </div>
+        <div>
+        </section>
+      <section>
+        <div>
+          <p>4.</p>
+          <p>
+              <pre>
+                  <code class="language-js">
+                    function checkFun(a, b, c){
+                        console.log(this);
+                        console.log(a);
+                        console.log(b);
+                        console.log(c);
+                    }
+                    checkFun.apply(1,[2,3,4]); // ?
+                  </code>
+              </pre>
+          </p>
+        </div>
+        <div>
+        </section>
+      <section>
+        <div>
+          <p>5.</p>
+          <p>
+              <pre>
+                  <code class="language-js">
+                    function sumOfNumbers() {
+                        var total = 0;
+                        for(var i = 0; i < arguments.length; i++){
+                            total += arguments[i];
+                        }
+                        return total;
+                    }
+                    var sum = sumOfNumbers(1,2,3);
+                    console.log(sum); // ?
+                  </code>
+              </pre>
+          </p>
+        </div>
+        <div>
+        </section>
+      <section>
+        <div>
+          <p>6.</p>
+          <p>
+              <pre>
+                  <code class="language-js">
+                    function sumOfNumbers() {
+                        var total = 0;
+                        for(var i = 0; i < arguments.length; i++){
+                            total += arguments[i];
+                        }
+                        return total;
+                    }
+                    var sum = sumOfNumbers.call(null,1,2,3);
+                    console.log(sum); // ?
+                  </code>
+              </pre>
+          </p>
+        </div>
+        <div>
+        </section>
+      <section>
+        <div>
+          <p>7.</p>
+          <p>
+              <pre>
+                  <code class="language-js">
+                    function sumOfNumbers() {
+                        var total = 0;
+                        for(var i = 0; i < arguments.length; i++){
+                            total += arguments[i];
+                        }
+                        return total;
+                    }
+                    var numbers = [1,2,3];
+                    var sum = sumOfNumbers.apply(null, numbers);
+                    console.log(sum); // ?
+                  </code>
+              </pre>
+          </p>
+        </div>
+        <div>
+        </section>
+      <section>
+        <div>
+          <p>8.</p>
+          <p>
+              <pre>
+                  <code class="language-js">
+                    function updateZipCode() {
+                        console.log(this)
+                    }
+                    updateZipCode.call(1); // ?
+                  </code>
+              </pre>
+          </p>
+        </div>
+        <div>
+        </section>
+      <section>
+        <div>
+          <p>9.</p>
+          <p>
+              <pre>
+                  <code class="language-js">
+                    var updateZipCode = function () {
+                        console.log(this);
+                    };
+                    updateZipCode.call({});
+                  </code>
+              </pre>
+          </p>
+        </div>
+        <div>
+        </section>
+      <section>
+        <div>
+          <p>10.</p>
+          <p>
+              <pre>
+                  <code class="language-js">
+                    var updateZipCode = function () {
+                        console.log(this);
+                    };
+                    updateZipCode.call({ zip: '11787'}); // ?
+                  </code>
+              </pre>
+          </p>
+        </div>
+        <div>
+        </section>
+      <section>
+        <div>
+          <p>11.</p>
+          <p>
+              <pre>
+                  <code class="language-js">
+                    var updateZipCode = function () {
+                        console.log(this);
+                    };
+                    var zipCode = {
+                        zip: '11787'
+                    };
+                    updateZipCode.call(zipCode); // ?
+                  </code>
+              </pre>
+          </p>
+        </div>
+        <div>
+        </section>
+      <section>
+        <div>
+          <p>12.</p>
+          <p>
+              <pre>
+                  <code class="language-js">
+                    var updateZipCode = function (newZip, country) {
+                        console.log(newZip + ' ' + country);
+                    };
+                    var zipCode = {
+                        zip: '11787'
+                    };
+                    updateZipCode.call(zipCode, '11888', 'us'); // ?
+                  </code>
+              </pre>
+          </p>
+        </div>
+        <div>
+        </section>
+      <section>
+        <div>
+          <p>13.</p>
+          <p>
+              <pre>
+                  <code class="language-js">
+                    var updateZipCode = function (newZip, country) {
+                        console.log(newZip + ' ' + country);
+                    };
+                    var zipCode = {
+                        zip: '11787'
+                    };
+                    updateZipCode.apply(zipCode, ['11888', 'us']); // ?
+                  </code>
+              </pre>
+          </p>
+        </div>
+        <div>
+        </section>
+      <section>
+        <div>
+          <p>14.</p>
+          <p>
+              <pre>
+                  <code class="language-js">
+                    "use strict";
+                    var zipcode = {
+                        checkZipcode : function() {
+                            console.log(this);
+                            function updateZipCode() {
+                                console.log(this);
+                            }
+                            updateZipCode.call(this);
+                        }
+                    }
+                    zipcode.checkZipcode(); // ?
+                  </code>
+              </pre>
+          </p>
+        </div>
+        <div>
+        </section>
+      <section>
+        <div>
+          <p>15.</p>
+          <p>
+              <pre>
+                  <code class="language-js">
+                    "use strict";
+                    var zipcode = {
+                        checkZipcode : function() {
+                            console.log(this);
+                            var updateZipCode = function() {
+                                console.log(this);
+                            }.bind(this);
+                            updateZipCode();
+                        }
+                    }
+                    zipcode.checkZipcode(); // ?
+                  </code>
+              </pre>
+          </p>
+        </div>
+        <div>
+        </section>
+      <section>
+        <div>
+          <p>16.</p>
+          <p>
+              <pre>
+                  <code class="language-js">
+                    "use strict";
+                    var person = {
+                        name : "Jack",
+                        prop : {
+                            name : "Daniel",
+                            getName : function() {
+                                return this.name;
+                            }
+                        }
+                    }
+
+                    var name = person.prop.getName.bind(person);
+                    console.log(name());
+
+                    var  name = person.prop.getName();
+                    console.log(name); // ?
+                  </code>
+              </pre>
+          </p>
+        </div>
+        <div>
+        </section>
+        <!-- footer -->
+        <section class="source">
+            <div>
+                <ul>
+                    <li>
+                        <a href="https://www.codingame.com/" target="_blank">codingame</a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        </main>
+        <script src="prism.js"></script>
+  </body>
+</html>
