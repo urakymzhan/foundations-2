@@ -22,13 +22,13 @@
   </head>
   <body>
     <main>
-        <!-- call, bind, apply -->
+      <!-- call, bind, apply -->
       <h2>call, bind, apply</h2>
-      <section>
+      <section class="questions">
         <div>
           <p>1.</p>
-          <p>
-              <pre>
+          <div>
+            <pre>
                   <code class="language-js">
                     var func = function() {
                         console.log(this)
@@ -37,15 +37,12 @@
                     func(); // ?
                   </code>
               </pre>
-          </p>
+          </div>
         </div>
         <div>
-        </section>
-      <section>
-        <div>
           <p>2.</p>
-          <p>
-              <pre>
+          <div>
+            <pre>
                   <code class="language-js">
                     var func = function() {
                         console.log(this)
@@ -57,15 +54,12 @@
                     obj.callFun.func(); // ?
                   </code>
               </pre>
-          </p>
+          </div>
         </div>
         <div>
-        </section>
-      <section>
-        <div>
           <p>3.</p>
-          <p>
-              <pre>
+          <div>
+            <pre>
                   <code class="language-js">
                     function checkFun(a, b, c){
                         console.log(this);
@@ -76,15 +70,12 @@
                     checkFun.call(1,2,3,4); // ?
                   </code>
               </pre>
-          </p>
+          </div>
         </div>
         <div>
-        </section>
-      <section>
-        <div>
           <p>4.</p>
-          <p>
-              <pre>
+          <div>
+            <pre>
                   <code class="language-js">
                     function checkFun(a, b, c){
                         console.log(this);
@@ -95,15 +86,12 @@
                     checkFun.apply(1,[2,3,4]); // ?
                   </code>
               </pre>
-          </p>
+          </div>
         </div>
         <div>
-        </section>
-      <section>
-        <div>
           <p>5.</p>
-          <p>
-              <pre>
+          <div>
+            <pre>
                   <code class="language-js">
                     function sumOfNumbers() {
                         var total = 0;
@@ -116,15 +104,12 @@
                     console.log(sum); // ?
                   </code>
               </pre>
-          </p>
+          </div>
         </div>
         <div>
-        </section>
-      <section>
-        <div>
           <p>6.</p>
-          <p>
-              <pre>
+          <div>
+            <pre>
                   <code class="language-js">
                     function sumOfNumbers() {
                         var total = 0;
@@ -137,15 +122,12 @@
                     console.log(sum); // ?
                   </code>
               </pre>
-          </p>
+          </div>
         </div>
         <div>
-        </section>
-      <section>
-        <div>
           <p>7.</p>
-          <p>
-              <pre>
+          <div>
+            <pre>
                   <code class="language-js">
                     function sumOfNumbers() {
                         var total = 0;
@@ -159,15 +141,12 @@
                     console.log(sum); // ?
                   </code>
               </pre>
-          </p>
+          </div>
         </div>
         <div>
-        </section>
-      <section>
-        <div>
           <p>8.</p>
-          <p>
-              <pre>
+          <div>
+            <pre>
                   <code class="language-js">
                     function updateZipCode() {
                         console.log(this)
@@ -175,15 +154,12 @@
                     updateZipCode.call(1); // ?
                   </code>
               </pre>
-          </p>
+          </div>
         </div>
         <div>
-        </section>
-      <section>
-        <div>
           <p>9.</p>
-          <p>
-              <pre>
+          <div>
+            <pre>
                   <code class="language-js">
                     var updateZipCode = function () {
                         console.log(this);
@@ -191,15 +167,12 @@
                     updateZipCode.call({});
                   </code>
               </pre>
-          </p>
+          </div>
         </div>
         <div>
-        </section>
-      <section>
-        <div>
           <p>10.</p>
-          <p>
-              <pre>
+          <div>
+            <pre>
                   <code class="language-js">
                     var updateZipCode = function () {
                         console.log(this);
@@ -207,15 +180,12 @@
                     updateZipCode.call({ zip: '11787'}); // ?
                   </code>
               </pre>
-          </p>
+          </div>
         </div>
         <div>
-        </section>
-      <section>
-        <div>
           <p>11.</p>
-          <p>
-              <pre>
+          <div>
+            <pre>
                   <code class="language-js">
                     var updateZipCode = function () {
                         console.log(this);
@@ -226,15 +196,12 @@
                     updateZipCode.call(zipCode); // ?
                   </code>
               </pre>
-          </p>
+          </div>
         </div>
         <div>
-        </section>
-      <section>
-        <div>
           <p>12.</p>
-          <p>
-              <pre>
+          <div>
+            <pre>
                   <code class="language-js">
                     var updateZipCode = function (newZip, country) {
                         console.log(newZip + ' ' + country);
@@ -245,15 +212,12 @@
                     updateZipCode.call(zipCode, '11888', 'us'); // ?
                   </code>
               </pre>
-          </p>
+          </div>
         </div>
         <div>
-        </section>
-      <section>
-        <div>
           <p>13.</p>
-          <p>
-              <pre>
+          <div>
+            <pre>
                   <code class="language-js">
                     var updateZipCode = function (newZip, country) {
                         console.log(newZip + ' ' + country);
@@ -264,15 +228,12 @@
                     updateZipCode.apply(zipCode, ['11888', 'us']); // ?
                   </code>
               </pre>
-          </p>
+          </div>
         </div>
         <div>
-        </section>
-      <section>
-        <div>
           <p>14.</p>
-          <p>
-              <pre>
+          <div>
+            <pre>
                   <code class="language-js">
                     "use strict";
                     var zipcode = {
@@ -287,15 +248,12 @@
                     zipcode.checkZipcode(); // ?
                   </code>
               </pre>
-          </p>
+          </div>
         </div>
         <div>
-        </section>
-      <section>
-        <div>
           <p>15.</p>
-          <p>
-              <pre>
+          <div>
+            <pre>
                   <code class="language-js">
                     "use strict";
                     var zipcode = {
@@ -310,15 +268,12 @@
                     zipcode.checkZipcode(); // ?
                   </code>
               </pre>
-          </p>
+          </div>
         </div>
         <div>
-        </section>
-      <section>
-        <div>
           <p>16.</p>
-          <p>
-              <pre>
+          <div>
+            <pre>
                   <code class="language-js">
                     "use strict";
                     var person = {
@@ -338,22 +293,71 @@
                     console.log(name); // ?
                   </code>
               </pre>
-          </p>
+          </div>
         </div>
+        <!-- call, bind, apply solve-->
+        <h2>call, bind, apply solve</h2>
         <div>
-        </section>
-        <!-- footer -->
-        <section class="source">
-            <div>
-                <ul>
-                    <li>
-                        <a href="https://www.codingame.com/" target="_blank">codingame</a>
-                        <a href="https://replit.com/@Isfaaq/Call-Apply-and-Bind-Exercise" target="_blank">more exercise</a>
-                    </li>
-                </ul>
-            </div>
-        </section>
-        </main>
-        <script src="prism.js"></script>
+          <p>1.</p>
+          <div>
+            <pre>
+                  <code class="language-js">
+                    // How would you implement this:
+
+                    const array = [1,2,3];
+
+                    function getMaxNumber(arr){
+                      //code here
+                    }
+
+                    getMaxNumber(array) // should return 3
+                  </code>
+              </pre>
+          </div>
+        </div>
+        <!-- this-->
+        <h2>this</h2>
+        <div>
+          <p>1.</p>
+          <div>
+            <pre>
+                  <code class="language-js">
+                    // Run this code, and you will see there is an issue. How would you fix it?
+
+
+                    const character = {
+                      name: 'Simon',
+                      getCharacter() {
+                        return this.name;
+                      }
+                    };
+                    const giveMeTheCharacterNOW = character.getCharacter;
+
+                    //How Would you fix this?
+                    console.log('?', giveMeTheCharacterNOW()); // this should return 'Simon' bud doesn't
+                  </code>
+              </pre>
+          </div>
+        </div>
+      </section>
+      <!-- footer -->
+      <section class="source">
+        <div>
+          <ul>
+            <li>
+              <a href="https://www.codingame.com/" target="_blank">codingame</a>
+            </li>
+            <li>
+              <a
+                href="https://replit.com/@Isfaaq/Call-Apply-and-Bind-Exercise"
+                target="_blank"
+                >more exercise</a
+              >
+            </li>
+          </ul>
+        </div>
+      </section>
+    </main>
+    <script src="prism.js"></script>
   </body>
 </html>
